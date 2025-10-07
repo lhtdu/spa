@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxury Spa - Chăm sóc sức khỏe và sắc đẹp</title>
     
-    <!-- Bootstrap 3 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Fonts -->
@@ -218,6 +220,33 @@
             .section-padding {
                 padding: 50px 0;
             }
+            
+            /* Cart styling */
+            #cart-btn:hover {
+                color: #4CAF50 !important;
+                background-color: transparent !important;
+            }
+
+            #cart-btn:hover #cart-badge {
+                transform: scale(1.1);
+                transition: transform 0.2s ease;
+            }
+
+            /* Responsive cart */
+            @media (max-width: 768px) {
+                #cart-btn {
+                    text-align: center;
+                    display: block !important;
+                }
+                
+                #cart-badge {
+                    position: relative !important;
+                    top: auto !important;
+                    right: auto !important;
+                    margin-left: 5px !important;
+                    display: inline-block !important;
+                }
+            }
         }
         
         @media (max-width: 480px) {
@@ -295,108 +324,175 @@
         .product-bottle:nth-child(4) {
             animation-delay: 1.5s;
         }
+        
+        /* Swiper Hero Styling */
+        #heroSlider {
+            min-height: 30rem;
+            max-height: 30rem;
+            overflow: hidden;
+        }
+        
+        .carousel-image {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .carousel-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .notice-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .carousel-content {
+            padding: 2rem 0;
+        }
+        
+        .swiper-slide {
+            padding: 0;
+            height: 30rem;
+            overflow: hidden;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand luxury-brand" href="#">
-                    <b><span style="font-size: 32px;">Luxury</span></b>
-                    <small style="font-size: 22px;">Spa</small>
-                </a>
+    <header class="navbar-sticky sticky-top container-fluid z-fixed px-4" data-sticky-element="" style="max-width: 1400px; margin: 15px auto 0; padding-top: 10px;">
+      <div class="navbar navbar-expand-lg flex-nowrap rounded-pill shadow ps-0 mx-3" style="max-width: 1400px; margin: 0 auto; height: 60px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark rounded-pill z-0 d-none d-block-dark"></div>
+
+        <!-- Mobile offcanvas menu toggler (Hamburger) -->
+        <button type="button" class="navbar-toggler ms-3" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar brand (Logo) -->
+        <a class="navbar-brand position-relative z-1 ms-4 ms-sm-5 ms-lg-4 me-2 me-sm-0 me-lg-3" href="/">
+          <img src="https://mmoit.net/uploads/images/01K6DA7RXAM06D8C8PHYAQN637.png" class="d-flex d-none d-md-inline-flex justify-content-center align-items-center flex-shrink-0 me-1 " style="width: 2.5rem; height: 2.5rem">
+          Tan Du
+        </a>
+
+        <!-- Main navigation that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
+        <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">
+            <div class="offcanvas-header py-3">
+                <h5 class="offcanvas-title" id="navbarNavLabel">Menu điều hướng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            
-            <div class="collapse navbar-collapse" id="main-nav">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">Trang Chủ</a></li>
-                    <li><a href="#about">Giới Thiệu</a></li>
-                    <li><a href="#pricing">Bảng Giá</a></li>
-                    <li><a href="#booking">Đặt Lịch</a></li>
-                    <li><a href="#blog">Tin Tức</a></li>
-                    <li><a href="#contact">Liên Hệ</a></li>
-                    <li><a href="#" class="btn btn-spa" style="margin-top: 17px; margin-left: 15px; padding: 12px 25px; font-size: 14px;">Đăng nhập/Đăng ký</a></li>
+            <div class="offcanvas-body pt-3 pb-4 py-lg-0 mx-lg-auto">
+                <ul class="navbar-nav position-relative">
+                    <li class="nav-item me-lg-n2 me-xl-0">
+                        <a class="nav-link fs-sm active" href="#home">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item me-lg-n2 me-xl-0">
+                        <a class="nav-link fs-sm" href="#services">
+                            Combo
+                        </a>
+                    </li>
+                    <li class="nav-item me-lg-n2 me-xl-0">
+                        <a class="nav-link fs-sm" href="#booking">
+                            Đặt lịch
+                        </a>
+                    </li>
+                    <li class="nav-item me-lg-n2 me-xl-0">
+                        <a class="nav-link fs-sm" href="#blog">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="nav-item me-lg-n2 me-xl-0">
+                        <a class="nav-link fs-sm" href="#contact">
+                            Liên hệ
+                        </a>
+                    </li>
+                    <li class="nav-item me-lg-n2 me-xl-0">
+                        <a class="nav-link fs-sm" href="#products">
+                            Sản phẩm
+                        </a>
+                    </li>
                 </ul>
             </div>
+        </nav>
+
+        <!-- Button group -->
+        <div class="d-flex gap-2 position-relative z-1 align-items-center">
+          <!-- User -->
+          <div class="d-flex gap-1">
+            <a class="btn btn-sm btn-primary d-flex align-items-center justify-content-center" href="#login" style="padding: 8px 16px; height: 36px;">Đăng nhập</a>
+          </div>
+          
+          <!-- Cart -->
+          <div class="dropdown position-relative">
+            <a class="btn btn-icon fs-lg btn-outline-secondary border-0 rounded-circle animate-scale cart-icon position-relative d-flex align-items-center justify-content-center" href="#cart" id="cart-btn" style="width: 36px; height: 36px;">
+              <i class="fa fa-shopping-cart animate-target"></i>
+              <span class="cart-count badge bg-danger position-absolute" id="cartCount" style="display: none;">0</span>
+            </a>
+            <div class="dropdown-menu cart-dropdown" style="--cz-dropdown-min-width: 320px; --cz-dropdown-spacer: 1rem; right: auto; left: -250px; transform: translateX(0);">
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6 class="mb-0">Giỏ hàng</h6>
+                  <span class="text-muted small" id="cartDropdownCount">0 sản phẩm</span>
+                </div>
+                
+                <div id="cartDropdownItems">
+                  <div class="text-center text-muted py-4">
+                    <i class="fa fa-shopping-cart fs-2 mb-2 d-block"></i>
+                    <small>Giỏ hàng trống</small>
+                  </div>
+                </div>
+                
+                <div id="cartDropdownFooter" style="display: none;">
+                  <hr class="my-3">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="fw-medium">Tổng cộng:</span>
+                    <span class="fw-bold" id="cartDropdownTotal">$0.00</span>
+                  </div>
+                  <div class="d-grid gap-2">
+                    <a href="#cart" class="btn btn-dark btn-sm">Xem giỏ hàng</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
-    </nav>
+      </div>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section" style="margin-top: 80px;">
-        <div style="position: relative; background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 50%, #e0f2e0 100%); height: 100vh; display: flex; align-items: center; overflow: hidden;">
-            <div class="container">
-                <div class="row">
-                    <!-- Left side - Products -->
-                    <div class="col-md-6" style="display: flex; align-items: center; justify-content: center; padding: 40px 0;">
-                        <div style="position: relative; width: 100%; max-width: 500px;">
-                            <!-- Product Image -->
-                            <div class="product-bottle" style="display: flex; justify-content: center; align-items: center;">
-                                <img src="img/produc1.jpg" alt="Natural Products" style="width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right side - Content -->
-                    <div class="col-md-6" style="display: flex; align-items: center; padding: 40px 20px;">
-                        <div style="text-align: left;">
-                            <!-- Brand logo area -->
-                            <div style="margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
-                                <div style="background: #4CAF50; color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; display: flex; align-items: center; gap: 5px;">
-                                    <i class="fa fa-leaf"></i> COCÂY HOALA
-                                    <span style="background: #FF5722; padding: 2px 6px; border-radius: 10px; font-size: 10px; margin-left: 5px;">S</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Main heading -->
-                            <h1 style="font-size: 48px; color: #2E7D32; font-weight: 700; line-height: 1.2; margin-bottom: 20px; font-family: 'Playfair Display', serif;">
-                                CÒ CÂY HOA LÁ
-                            </h1>
-                            
-                            <!-- Subheading -->
-                            <div style="background: white; padding: 15px 25px; border-radius: 30px; display: inline-block; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border: 2px solid #4CAF50;">
-                                <h2 style="font-size: 22px; color: #2E7D32; font-weight: 600; margin: 0;">LỰA CHỌN VÌ SỨC KHỎE</h2>
-                            </div>
-                            
-                            <!-- Description -->
-                            <p style="font-size: 18px; color: #2E7D32; margin-bottom: 30px; font-weight: 500; line-height: 1.4;">
-                                Cam kết 100% thiên nhiên
-                            </p>
-                            
-                            <!-- Feature badges -->
-                            <div style="display: flex; gap: 20px; margin-bottom: 35px; flex-wrap: wrap;">
-                                <div style="background: white; padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); min-width: 140px; border: 2px solid #E8F5E8;">
-                                    <div style="font-size: 32px; color: #4CAF50; font-weight: bold; margin-bottom: 5px;">100%</div>
-                                    <div style="color: #4CAF50; font-weight: 600; font-size: 14px;">CHÍNH</div>
-                                    <div style="color: #4CAF50; font-weight: 600; font-size: 14px;">HÃNG</div>
-                                </div>
-                                
-                                <div style="background: white; padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); min-width: 140px; border: 2px solid #E8F5E8;">
-                                    <div style="font-size: 20px; color: #4CAF50; margin-bottom: 5px;"><i class="fa fa-truck"></i> FREE</div>
-                                    <div style="color: #4CAF50; font-weight: 600; font-size: 14px;">FREE</div>
-                                    <div style="color: #4CAF50; font-weight: 600; font-size: 14px;">SHIP</div>
-                                </div>
-                            </div>
-                            
-                            <!-- CTA Button -->
-                            <button class="btn btn-spa" style="background: linear-gradient(45deg, #FF9800, #FF5722); border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 30px; color: white; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);">
-                                <i class="fa fa-shopping-cart" style="margin-right: 10px;"></i>MUA NGAY
-                            </button>
-                        </div>
-                    </div>
+    <section id="home" class="hero-section" style="margin-top: 40px; max-width: 1330px; margin-left: auto; margin-right: auto; border-radius: 15px; overflow: hidden; height: 30rem;">
+        <div class="swiper position-relative z-2 swiper-initialized swiper-horizontal swiper-backface-hidden" id="heroSlider" style="border-radius: 15px; height: 100%;">
+            <div class="swiper-wrapper" id="swiper-wrapper-a2a95392df7139ba" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-736px, 0px, 0px); transition-delay: 0ms; height: 100%;">
+                
+                <!-- Slide 1: Image -->
+                <div class="swiper-slide swiper-slide-next" role="group" aria-label="1 / 3" data-swiper-slide-index="0">
+                    <img src="/img/banner.jpg" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 15px;">
+                </div>
+                
+                <!-- Slide 2: Image -->
+                <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 3" data-swiper-slide-index="1">
+                    <img src="/img/banner.jpg" alt="Slide 2" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 15px;">
+                </div>
+                
+                <!-- Slide 3: Image -->
+                <div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 3" data-swiper-slide-index="2">
+                    <img src="/img/banner.jpg" alt="Slide 3" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 15px;">
                 </div>
             </div>
-            
-            <!-- Watermark -->
-            <div style="position: absolute; bottom: 20px; right: 30px; color: rgba(46, 125, 50, 0.5); font-size: 12px; font-style: italic;">
-                luxuryspa.design
-            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
     </section>
 
@@ -735,5 +831,99 @@
     <!-- jQuery và Bootstrap 3 JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+    // Cart functionality
+    let cart = [];
+    let cartCount = 0;
+
+    function updateCartBadge() {
+        document.getElementById('cart-badge').textContent = cartCount;
+    }
+
+    function addToCart(item) {
+        cart.push(item);
+        cartCount++;
+        updateCartBadge();
+        
+        // Show notification
+        alert('Đã thêm vào giỏ hàng: ' + item.name);
+    }
+
+    // Cart button click handler
+    document.getElementById('cart-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        showCartModal();
+    });
+
+    function showCartModal() {
+        let cartContent = '<h4>Giỏ hàng của bạn</h4>';
+        
+        if (cart.length === 0) {
+            cartContent += '<p>Giỏ hàng trống</p>';
+        } else {
+            cartContent += '<ul>';
+            cart.forEach(function(item, index) {
+                cartContent += '<li>' + item.name + ' - ' + item.price + '</li>';
+            });
+            cartContent += '</ul>';
+        }
+        
+        // Simple modal implementation
+        if (confirm(cartContent + '\n\nBạn có muốn xem chi tiết giỏ hàng không?')) {
+            // Redirect to cart page or show detailed modal
+            console.log('Show detailed cart');
+        }
+    }
+
+    // Initialize
+    updateCartBadge();
+    </script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Additional Cart functionality -->
+    <script>
+    // Cart dropdown functionality
+    document.getElementById('cart-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdown = this.nextElementSibling;
+        dropdown.classList.toggle('show');
+    });
+    
+    // Close cart dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        const cartDropdown = document.querySelector('.cart-dropdown');
+        const cartBtn = document.getElementById('cart-btn');
+        if (!cartBtn.contains(e.target) && !cartDropdown.contains(e.target)) {
+            cartDropdown.classList.remove('show');
+        }
+    });
+    
+    // Initialize Swiper
+    const heroSwiper = new Swiper('#heroSlider', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        effect: 'slide',
+        speed: 1000,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    </script>
 </body>
 </html>
