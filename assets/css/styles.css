@@ -380,3 +380,28 @@ html {
     object-fit: cover;
     display: block;
 }
+
+
+
+/* Hero Slider Dots Indicator - Simple Three Dots */
+.hero-dots-indicator {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+}
+
+.hero-dots-indicator .dot {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.hero-dots-indicator .dot.active {
+    color: #4CAF50;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+}

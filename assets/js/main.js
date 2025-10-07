@@ -76,22 +76,37 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof Swiper !== 'undefined') {
         const heroSwiper = new Swiper('#heroSlider', {
             loop: true,
+            initialSlide: 0, // Start from first slide
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
             },
-            effect: 'slide',
+            effect: 'slide', // Slide effect
             speed: 1000,
             slidesPerView: 1,
             spaceBetween: 0,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+            on: {
+                init: function() {
+                    // Ensure first slide is active on init
+                    this.slideTo(0, 0, false);
+                    updateDotIndicator(0);
+                },
+                slideChange: function() {
+                    // Update dot indicator when slide changes
+                    updateDotIndicator(this.realIndex);
+                }
+            }
+        });
+    }
+    
+    // Function to update dot indicator
+    function updateDotIndicator(activeIndex) {
+        const dots = document.querySelectorAll('.hero-dots-indicator .dot');
+        dots.forEach((dot, index) => {
+            dot.classList.remove('active');
+            if (index === activeIndex) {
+                dot.classList.add('active');
+            }
         });
     }
     
