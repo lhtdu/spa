@@ -94,4 +94,58 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         });
     }
+    
+    // Blog Slider functionality - 3 Articles with Single Article Movement
+    let currentIndex = 0;
+    const totalArticles = 6; // Total 6 articles
+    const articlesPerView = 3; // Show 3 articles at a time
+    const maxIndex = totalArticles - articlesPerView; // Maximum index (3)
+    
+    const blogSlider = document.getElementById('blogSlider');
+    const blogPrevBtn = document.getElementById('blogPrevBtn');
+    const blogNextBtn = document.getElementById('blogNextBtn');
+    
+    function updateBlogSlider() {
+        if (blogSlider) {
+            // Each article takes up (33.333% + margin), so we need to calculate the actual pixel movement
+            // For viewport width, each article is approximately 33.333% + margin
+            // We move by one article width at a time
+            const movePercent = (100 / 3); // One article = 33.333% of viewport
+            const translateX = currentIndex * -movePercent;
+            blogSlider.style.transform = `translateX(${translateX}%)`;
+        }
+    }
+    
+    function nextBlogSlide() {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to start
+        }
+        updateBlogSlider();
+    }
+    
+    function prevBlogSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = maxIndex; // Loop to end
+        }
+        updateBlogSlider();
+    }
+    
+    // Add event listeners for blog navigation buttons
+    if (blogNextBtn) {
+        blogNextBtn.addEventListener('click', nextBlogSlide);
+    }
+    
+    if (blogPrevBtn) {
+        blogPrevBtn.addEventListener('click', prevBlogSlide);
+    }
+    
+    // Initialize slider position
+    updateBlogSlider();
+    
+    // Auto-slide for blog (optional) - disabled for manual control
+    // setInterval(nextBlogSlide, 8000); // Auto slide every 8 seconds
 });
