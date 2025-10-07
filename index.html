@@ -189,6 +189,37 @@
             margin-bottom: 23px;
         }
         
+        /* Navigation items spacing */
+        .navbar-nav {
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        @media (min-width: 992px) {
+            .navbar-nav {
+                display: flex !important;
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .nav-item {
+                flex: 1;
+                text-align: center;
+                margin: 0 !important;
+            }
+            
+            .nav-link {
+                padding: 20px 10px !important;
+                display: block;
+                width: 100%;
+                text-align: center;
+                white-space: nowrap;
+                font-size: 16px !important;
+                font-weight: 500 !important;
+            }
+        }
+        
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
