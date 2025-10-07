@@ -405,3 +405,60 @@ html {
     color: #4CAF50;
     text-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
 }
+
+/* Luxury Spa Services Cards Hover Effects */
+.luxury-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(76, 175, 80, 0.2), 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.luxury-card:hover img {
+    transform: scale(1.1);
+}
+
+.featured-card:hover {
+    transform: scale(1.08) translateY(-10px);
+    box-shadow: 0 35px 70px rgba(76, 175, 80, 0.25), 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.featured-card:hover img {
+    transform: scale(1.12);
+}
+
+.luxury-premium:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(156, 39, 176, 0.25), 0 15px 35px rgba(233, 30, 99, 0.1);
+}
+
+.luxury-premium:hover img {
+    transform: scale(1.1);
+}
+
+/* Button Hover Effects */
+.luxury-btn:hover {
+    background: linear-gradient(135deg, #45a049, #388e3c);
+    box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+    transform: translateY(-2px);
+}
+
+.featured-btn:hover {
+    background: linear-gradient(135deg, #45a049, #388e3c);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.5);
+    transform: translateY(-3px);
+}
+
+.featured-btn:hover div {
+    opacity: 1;
+    animation: shimmer 0.6s ease-in-out;
+}
+
+.premium-btn:hover {
+    background: linear-gradient(135deg, #8e24aa, #c2185b);
+    box-shadow: 0 12px 30px rgba(156, 39, 176, 0.4);
+    transform: translateY(-2px);
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
