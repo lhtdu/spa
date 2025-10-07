@@ -2,12 +2,23 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background: #FAFAFA;
+}
+
+/* Ensure all sections have consistent background */
+section {
+    background: #FAFAFA !important;
+}
+
+/* Exceptions for specific sections */
+.footer-section {
+    background: #2E2E2E !important;
 }
 
 .luxury-brand {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    color: #6B8E23;
+    color: #7C5E3B;
 }
 
 .navbar-brand {
@@ -17,15 +28,17 @@ body {
 }
 
 .hero-section {
+    background: #FAFAFA;
     position: relative;
     overflow: hidden;
     height: 100vh;
     padding: 0;
+
 }
 
 .product-badge {
-    background: #4CAF50;
-    color: white;
+    background: #7C5E3B;
+    color: #FAFAFA;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 12px;
@@ -76,7 +89,7 @@ body {
 }
 
 .booking-section {
-    background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 50%, #e0f2e0 100%);
+    background: linear-gradient(135deg, #F5F2ED 0%, #FAFAFA 50%, #F2EDE5 100%);
 }
 
 .booking-section .row {
@@ -111,8 +124,8 @@ body {
 }
 
 .btn-spa {
-    background: #4CAF50;
-    color: white;
+    background: #7C5E3B;
+    color: #FAFAFA;
     border: none;
     padding: 12px 30px;
     border-radius: 25px;
@@ -121,8 +134,8 @@ body {
 }
 
 .btn-spa:hover {
-    background: #45a049;
-    color: white;
+    background: #6B4F32;
+    color: #FAFAFA;
 }
 
 .blog-card {
@@ -165,7 +178,7 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-    color: #4CAF50;
+    color: #7C5E3B;
 }
 
 .navbar-toggle {
@@ -238,7 +251,7 @@ html {
     
     /* Cart styling */
     #cart-btn:hover {
-        color: #4CAF50 !important;
+        color: #7C5E3B !important;
         background-color: transparent !important;
     }
 
@@ -293,12 +306,12 @@ html {
 /* Button hover effects */
 .btn-spa {
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 15px rgba(124, 94, 59, 0.3);
 }
 
 .btn-spa:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 6px 20px rgba(124, 94, 59, 0.4);
 }
 
 /* Input styling */
@@ -309,8 +322,8 @@ html {
 }
 
 .form-control:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+    border-color: #7C5E3B;
+    box-shadow: 0 0 8px rgba(124, 94, 59, 0.2);
 }
 
 /* Hero banner animations */
@@ -402,14 +415,14 @@ html {
 }
 
 .hero-dots-indicator .dot.active {
-    color: #4CAF50;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    color: #7C5E3B;
+    text-shadow: 0 0 10px rgba(124, 94, 59, 0.6);
 }
 
 /* Luxury Spa Services Cards Hover Effects */
 .luxury-card:hover {
     transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(76, 175, 80, 0.2), 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 30px 60px rgba(124, 94, 59, 0.2), 0 15px 35px rgba(0,0,0,0.1);
 }
 
 .luxury-card:hover img {
@@ -418,7 +431,7 @@ html {
 
 .featured-card:hover {
     transform: scale(1.08) translateY(-10px);
-    box-shadow: 0 35px 70px rgba(76, 175, 80, 0.25), 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 35px 70px rgba(124, 94, 59, 0.25), 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .featured-card:hover img {
@@ -436,14 +449,14 @@ html {
 
 /* Button Hover Effects */
 .luxury-btn:hover {
-    background: linear-gradient(135deg, #45a049, #388e3c);
-    box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(135deg, #6B4F32, #388e3c);
+    box-shadow: 0 12px 30px rgba(124, 94, 59, 0.4);
     transform: translateY(-2px);
 }
 
 .featured-btn:hover {
-    background: linear-gradient(135deg, #45a049, #388e3c);
-    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.5);
+    background: linear-gradient(135deg, #6B4F32, #388e3c);
+    box-shadow: 0 15px 35px rgba(124, 94, 59, 0.5);
     transform: translateY(-3px);
 }
 
