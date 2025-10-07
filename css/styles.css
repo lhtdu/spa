@@ -1,0 +1,382 @@
+/* Custom CSS for Tan Du Luxury Spa */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.luxury-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #6B8E23;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    padding: 20px 15px;
+    line-height: 1.2;
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    padding: 0;
+}
+
+.product-badge {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
+}
+
+.free-badge {
+    background: #FF9800;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.combo-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    margin-bottom: 40px;
+    min-height: 450px;
+    background: white;
+}
+
+.combo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.combo-card:hover img {
+    transform: scale(1.05);
+}
+
+.combo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.booking-section {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 50%, #e0f2e0 100%);
+}
+
+.booking-section .row {
+    display: flex;
+    align-items: stretch;
+}
+
+.booking-section .col-md-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-section {
+    background: #2E2E2E;
+    color: white;
+    padding: 50px 0;
+}
+
+.btn-spa {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-spa:hover {
+    background: #45a049;
+    color: white;
+}
+
+.blog-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Navbar styling */
+.navbar-default {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-height: 80px;
+    padding: 10px 0;
+}
+
+.navbar-default .navbar-nav {
+    margin: 0;
+}
+
+.navbar-default .navbar-nav > li {
+    margin: 0 8px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 25px 20px;
+    transition: color 0.3s ease;
+    line-height: 30px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #4CAF50;
+}
+
+.navbar-toggle {
+    margin-top: 23px;
+    margin-bottom: 23px;
+}
+
+/* Navigation items spacing */
+.navbar-nav {
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        display: flex !important;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .nav-item {
+        flex: 1;
+        text-align: center;
+        margin: 0 !important;
+    }
+    
+    .nav-link {
+        padding: 20px 10px !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0 !important;
+        min-height: 80vh !important;
+    }
+    
+    .hero-section h1 {
+        font-size: 36px !important;
+    }
+    
+    .hero-section h2 {
+        font-size: 20px !important;
+    }
+    
+    .hero-section p {
+        font-size: 16px !important;
+    }
+    
+    .navbar-brand {
+        font-size: 20px !important;
+    }
+    
+    .section-padding {
+        padding: 50px 0;
+    }
+    
+    /* Cart styling */
+    #cart-btn:hover {
+        color: #4CAF50 !important;
+        background-color: transparent !important;
+    }
+
+    #cart-btn:hover #cart-badge {
+        transform: scale(1.1);
+        transition: transform 0.2s ease;
+    }
+
+    /* Responsive cart */
+    @media (max-width: 768px) {
+        #cart-btn {
+            text-align: center;
+            display: block !important;
+        }
+        
+        #cart-badge {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            margin-left: 5px !important;
+            display: inline-block !important;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 28px !important;
+    }
+    
+    .hero-section h2 {
+        font-size: 18px !important;
+    }
+}
+
+/* Animation effects */
+.combo-card, .blog-card, .testimonial-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button hover effects */
+.btn-spa {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-spa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Input styling */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+/* Hero banner animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.product-bottle {
+    animation: float 3s ease-in-out infinite;
+}
+
+.product-bottle:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.product-bottle:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.product-bottle:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+/* Swiper Hero Styling */
+#heroSlider {
+    min-height: 30rem;
+    max-height: 30rem;
+    overflow: hidden;
+}
+
+.carousel-image {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+    transform: scale(1.05);
+}
+
+.notice-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.carousel-content {
+    padding: 2rem 0;
+}
+
+.swiper-slide {
+    padding: 0;
+    height: 30rem;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

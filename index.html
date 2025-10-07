@@ -13,390 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Custom CSS sẽ được thêm vào đây */
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        
-        .luxury-brand {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: #6B8E23;
-        }
-        
-        .navbar-brand {
-            font-size: 28px;
-            padding: 20px 15px;
-            line-height: 1.2;
-        }
-        
-        .hero-section {
-            position: relative;
-            overflow: hidden;
-            height: 100vh;
-            padding: 0;
-        }
-        
-        .product-badge {
-            background: #4CAF50;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin: 5px;
-        }
-        
-        .free-badge {
-            background: #FF9800;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin: 5px;
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .combo-card {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            margin-bottom: 40px;
-            min-height: 450px;
-            background: white;
-        }
-        
-        .combo-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .combo-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        .combo-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        
-        .booking-section {
-            background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 50%, #e0f2e0 100%);
-        }
-        
-        .booking-section .row {
-            display: flex;
-            align-items: stretch;
-        }
-        
-        .booking-section .col-md-6 {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .footer-section {
-            background: #2E2E2E;
-            color: white;
-            padding: 50px 0;
-        }
-        
-        .btn-spa {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-spa:hover {
-            background: #45a049;
-            color: white;
-        }
-        
-        .blog-card {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .blog-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        /* Navbar styling */
-        .navbar-default {
-            background-color: rgba(255, 255, 255, 0.95);
-            border: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            min-height: 80px;
-            padding: 10px 0;
-        }
-        
-        .navbar-default .navbar-nav {
-            margin: 0;
-        }
-        
-        .navbar-default .navbar-nav > li {
-            margin: 0 8px;
-        }
-        
-        .navbar-default .navbar-nav > li > a {
-            color: #333;
-            font-weight: 500;
-            font-size: 16px;
-            padding: 25px 20px;
-            transition: color 0.3s ease;
-            line-height: 30px;
-        }
-        
-        .navbar-default .navbar-nav > li > a:hover {
-            color: #4CAF50;
-        }
-        
-        .navbar-toggle {
-            margin-top: 23px;
-            margin-bottom: 23px;
-        }
-        
-        /* Navigation items spacing */
-        .navbar-nav {
-            width: 100%;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-        
-        @media (min-width: 992px) {
-            .navbar-nav {
-                display: flex !important;
-                justify-content: space-between;
-                width: 100%;
-            }
-            
-            .nav-item {
-                flex: 1;
-                text-align: center;
-                margin: 0 !important;
-            }
-            
-            .nav-link {
-                padding: 20px 10px !important;
-                display: block;
-                width: 100%;
-                text-align: center;
-                white-space: nowrap;
-                font-size: 16px !important;
-                font-weight: 500 !important;
-            }
-        }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 80px 0 !important;
-                min-height: 80vh !important;
-            }
-            
-            .hero-section h1 {
-                font-size: 36px !important;
-            }
-            
-            .hero-section h2 {
-                font-size: 20px !important;
-            }
-            
-            .hero-section p {
-                font-size: 16px !important;
-            }
-            
-            .navbar-brand {
-                font-size: 20px !important;
-            }
-            
-            .section-padding {
-                padding: 50px 0;
-            }
-            
-            /* Cart styling */
-            #cart-btn:hover {
-                color: #4CAF50 !important;
-                background-color: transparent !important;
-            }
-
-            #cart-btn:hover #cart-badge {
-                transform: scale(1.1);
-                transition: transform 0.2s ease;
-            }
-
-            /* Responsive cart */
-            @media (max-width: 768px) {
-                #cart-btn {
-                    text-align: center;
-                    display: block !important;
-                }
-                
-                #cart-badge {
-                    position: relative !important;
-                    top: auto !important;
-                    right: auto !important;
-                    margin-left: 5px !important;
-                    display: inline-block !important;
-                }
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-section h1 {
-                font-size: 28px !important;
-            }
-            
-            .hero-section h2 {
-                font-size: 18px !important;
-            }
-        }
-        
-        /* Animation effects */
-        .combo-card, .blog-card, .testimonial-card {
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Button hover effects */
-        .btn-spa {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-        }
-        
-        .btn-spa:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-        }
-        
-        /* Input styling */
-        .form-control {
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            padding: 10px 15px;
-        }
-        
-        .form-control:focus {
-            border-color: #4CAF50;
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
-        }
-        
-        /* Hero banner animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .product-bottle {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .product-bottle:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-        
-        .product-bottle:nth-child(3) {
-            animation-delay: 1s;
-        }
-        
-        .product-bottle:nth-child(4) {
-            animation-delay: 1.5s;
-        }
-        
-        /* Swiper Hero Styling */
-        #heroSlider {
-            min-height: 30rem;
-            max-height: 30rem;
-            overflow: hidden;
-        }
-        
-        .carousel-image {
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .carousel-image:hover {
-            transform: scale(1.05);
-        }
-        
-        .notice-container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .carousel-content {
-            padding: 2rem 0;
-        }
-        
-        .swiper-slide {
-            padding: 0;
-            height: 30rem;
-            overflow: hidden;
-        }
-        
-        .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -702,46 +320,40 @@
                 <!-- Content Side -->
                 <div class="col-lg-6">
                     <div style="padding: 0 30px;">
-                        <!-- Features -->
-                        <div class="row">
-                            <div class="col-12 mb-4">
-                                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-left: 5px solid #4CAF50; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <div style="display: flex; align-items: center; gap: 20px;">
-                                        <div style="background: linear-gradient(45deg, #4CAF50, #8BC34A); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <div>
-                                            <h4 style="margin: 0 0 10px 0; color: #333; font-weight: 600; font-size: 20px;">Dịch Vụ 5 Sao</h4>
-                                            <p style="margin: 0; color: #666; line-height: 1.6; font-size: 15px;">Trải nghiệm dịch vụ chăm sóc đẳng cấp quốc tế với đội ngũ chuyên viên giàu kinh nghiệm</p>
-                                        </div>
+                        <!-- Features List -->
+                        <div class="row mb-4">
+                            <div class="col-12 mb-3">
+                                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px;">
+                                    <div style="background: linear-gradient(45deg, #4CAF50, #8BC34A); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 8px 0; color: #333; font-weight: 600; font-size: 22px;">Dịch Vụ 5 Sao</h4>
+                                        <p style="margin: 0; color: #666; line-height: 1.6; font-size: 16px;">Trải nghiệm dịch vụ chăm sóc đẳng cấp quốc tế với đội ngũ chuyên viên giàu kinh nghiệm</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px;">
+                                    <div style="background: linear-gradient(45deg, #FF9800, #FF5722); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">
+                                        <i class="fa fa-gift"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 8px 0; color: #333; font-weight: 600; font-size: 22px;">Ưu Đãi Hấp Dẫn</h4>
+                                        <p style="margin: 0; color: #666; line-height: 1.6; font-size: 16px;">Giảm giá lên đến 30% cho khách hàng đặt lịch trước và nhiều quà tặng đặc biệt</p>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="col-12 mb-4">
-                                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-left: 5px solid #FF9800; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <div style="display: flex; align-items: center; gap: 20px;">
-                                        <div style="background: linear-gradient(45deg, #FF9800, #FF5722); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">
-                                            <i class="fa fa-gift"></i>
-                                        </div>
-                                        <div>
-                                            <h4 style="margin: 0 0 10px 0; color: #333; font-weight: 600; font-size: 20px;">Ưu Đãi Hấp Dẫn</h4>
-                                            <p style="margin: 0; color: #666; line-height: 1.6; font-size: 15px;">Giảm giá lên đến 30% cho khách hàng đặt lịch trước và nhiều quà tặng đặc biệt</p>
-                                        </div>
+                                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px;">
+                                    <div style="background: linear-gradient(45deg, #9C27B0, #E91E63); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">
+                                        <i class="fa fa-clock-o"></i>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12 mb-4">
-                                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-left: 5px solid #9C27B0; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                                    <div style="display: flex; align-items: center; gap: 20px;">
-                                        <div style="background: linear-gradient(45deg, #9C27B0, #E91E63); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">
-                                            <i class="fa fa-clock-o"></i>
-                                        </div>
-                                        <div>
-                                            <h4 style="margin: 0 0 10px 0; color: #333; font-weight: 600; font-size: 20px;">Linh Hoạt Thời Gian</h4>
-                                            <p style="margin: 0; color: #666; line-height: 1.6; font-size: 15px;">Mở cửa 7 ngày trong tuần, bạn có thể chọn khung giờ phù hợp nhất</p>
-                                        </div>
+                                    <div>
+                                        <h4 style="margin: 0 0 8px 0; color: #333; font-weight: 600; font-size: 22px;">Linh Hoạt Thời Gian</h4>
+                                        <p style="margin: 0; color: #666; line-height: 1.6; font-size: 16px;">Mở cửa 7 ngày trong tuần, bạn có thể chọn khung giờ phù hợp nhất</p>
                                     </div>
                                 </div>
                             </div>
@@ -749,25 +361,25 @@
                         
                         <!-- Action Buttons -->
                         <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <button style="background: linear-gradient(45deg, #4CAF50, #8BC34A); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 16px; font-weight: 600; margin: 0 10px 15px 0; cursor: pointer; box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(76, 175, 80, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(76, 175, 80, 0.4)'">
+                                    <i class="fa fa-calendar" style="margin-right: 10px;"></i>Đặt Lịch Ngay
+                                </button>
+                                <button style="background: transparent; color: #4CAF50; border: 2px solid #4CAF50; padding: 16px 40px; border-radius: 50px; font-size: 16px; font-weight: 600; margin: 0 10px 15px 0; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='#4CAF50'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#4CAF50'">
+                                    <i class="fa fa-phone" style="margin-right: 10px;"></i>Gọi Ngay
+                                </button>
+                            </div>
+                            
+                            <!-- Contact Info -->
                             <div class="col-12">
-                                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); text-align: center;">
-                                    <div style="margin-bottom: 25px;">
-                                        <button style="background: linear-gradient(45deg, #4CAF50, #8BC34A); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 16px; font-weight: 600; margin: 0 10px 10px 0; cursor: pointer; box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 30px rgba(76, 175, 80, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(76, 175, 80, 0.4)'">
-                                            <i class="fa fa-calendar" style="margin-right: 10px;"></i>Đặt Lịch Ngay
-                                        </button>
-                                        <button style="background: transparent; color: #4CAF50; border: 2px solid #4CAF50; padding: 16px 40px; border-radius: 50px; font-size: 16px; font-weight: 600; margin: 0 10px 10px 0; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;" onmouseover="this.style.background='#4CAF50'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#4CAF50'">
-                                            <i class="fa fa-phone" style="margin-right: 10px;"></i>Gọi Ngay
-                                        </button>
+                                <div style="display: flex; justify-content: center; align-items: center; gap: 40px; color: #666; flex-wrap: wrap;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <i class="fa fa-phone" style="color: #4CAF50; font-size: 20px;"></i>
+                                        <strong style="color: #333; font-size: 18px;">0123-456-789</strong>
                                     </div>
-                                    <div style="display: flex; justify-content: center; align-items: center; gap: 30px; color: #666;">
-                                        <div>
-                                            <i class="fa fa-phone" style="color: #4CAF50; font-size: 18px; margin-right: 8px;"></i>
-                                            <strong style="color: #333;">0123-456-789</strong>
-                                        </div>
-                                        <div>
-                                            <i class="fa fa-clock-o" style="color: #4CAF50; font-size: 18px; margin-right: 8px;"></i>
-                                            <strong style="color: #333;">8:00 - 22:00</strong>
-                                        </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <i class="fa fa-clock-o" style="color: #4CAF50; font-size: 20px;"></i>
+                                        <strong style="color: #333; font-size: 18px;">8:00 - 22:00</strong>
                                     </div>
                                 </div>
                             </div>
@@ -779,30 +391,88 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="section-padding">
+    <section id="blog" class="section-padding" style="background: #ffffff; padding: 80px 0;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 style="font-size: 36px; margin-bottom: 50px; color: #333;">Các bài báo về Spa</h2>
+            <!-- Section Header -->
+            <div class="row align-items-center mb-5">
+                <!-- Left side - Text content -->
+                <div class="col-md-8 col-lg-9">
+                    <div style="color: #333;">
+                        <h2 style="font-size: 36px; font-weight: 700; margin: 0 0 15px 0; color: #333; text-transform: uppercase; letter-spacing: 2px;">
+                            CÁC BÀI BÁOS VỀ SPA
+                        </h2>
+                        <p style="font-size: 18px; margin: 0; color: #666; font-weight: 300; line-height: 1.4;">
+                            Khám phá những bí quyết chăm sóc sức khỏe và sắc đẹp từ các chuyên gia hàng đầu!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right side - Button -->
+                <div class="col-md-4 col-lg-3 text-end">
+                    <button style="background: #4CAF50; color: white; border: none; padding: 15px 30px; border-radius: 30px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);" onmouseover="this.style.background='#45a049'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#4CAF50'; this.style.transform='translateY(0)'">
+                        Xem thêm
+                    </button>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="blog-card">
-                        <img src="https://via.placeholder.com/600x300/E8F5E8/333333?text=7+lý+do+vì+sao+phải+hình+thành+thói+quen+chăm+sóc+da+mặt+mỗi+ngày" alt="Blog 1" class="img-responsive">
-                        <div style="padding: 20px;">
-                            <h4 style="color: #333; margin-bottom: 15px;">7 lý do vì sao phải hình thành thói quen chăm sóc da mặt mỗi ngày</h4>
-                            <p style="color: #666; font-size: 14px;">Chăm sóc da mặt hàng ngày không chỉ giúp duy trì làn da khỏe mạnh mà còn ngăn ngừa các vấn đề về da...</p>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="blog-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="position: relative; overflow: hidden;">
+                            <img src="/img/anh1.jpg" alt="Spa Tips" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="position: absolute; top: 15px; left: 15px; background: #4CAF50; color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
+                                CHĂM SÓC DA
+                            </div>
+                        </div>
+                        <div style="padding: 25px;">
+                            <h4 style="color: #333; margin-bottom: 15px; font-size: 20px; font-weight: 600; line-height: 1.4;">7 lý do vì sao phải hình thành thói quen chăm sóc da mặt mỗi ngày</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Chăm sóc da mặt hàng ngày không chỉ giúp duy trì làn da khỏe mạnh mà còn ngăn ngừa các vấn đề về da. Khám phá 7 lý do quan trọng vì sao bạn nên tạo thói quen chăm sóc da đều đặn...</p>
                             <a href="#" class="btn btn-spa btn-sm">Đọc thêm</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="blog-card">
-                        <img src="https://via.placeholder.com/600x300/FFF8E1/333333?text=Có+nên+đi+spa+chăm+sóc+da+Lời+ích+của+việc+chăm+sóc+da+tại+spa" alt="Blog 2" class="img-responsive">
-                        <div style="padding: 20px;">
-                            <h4 style="color: #333; margin-bottom: 15px;">Có nên đi spa chăm sóc da? Lợi ích của việc chăm sóc da tại spa</h4>
-                            <p style="color: #666; font-size: 14px;">Spa chăm sóc da mang đến nhiều lợi ích vượt trội so với việc tự chăm sóc tại nhà với các liệu pháp chuyên nghiệp...</p>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="blog-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="position: relative; overflow: hidden;">
+                            <img src="/img/anh2.jpg" alt="Spa Benefits" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="position: absolute; top: 15px; left: 15px; background: linear-gradient(45deg, #FF9800, #FF5722); color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
+                                LỢI ÍCH SPA
+                            </div>
+                        </div>
+                        <div style="padding: 25px;">
+                            <h4 style="color: #333; margin-bottom: 15px; font-size: 20px; font-weight: 600; line-height: 1.4;">Có nên đi spa chăm sóc da? Lợi ích của việc chăm sóc da tại spa</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Spa chăm sóc da mang đến nhiều lợi ích vượt trội so với việc tự chăm sóc tại nhà. Từ các liệu pháp chuyên nghiệp đến thiết bị hiện đại, spa giúp bạn đạt được làn da hoàn hảo...</p>
+                            <a href="#" class="btn btn-spa btn-sm">Đọc thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="blog-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="position: relative; overflow: hidden;">
+                            <img src="/img/anh3.jpg" alt="Spa Therapy" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="position: absolute; top: 15px; left: 15px; background: linear-gradient(45deg, #9C27B0, #E91E63); color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
+                                LIỆU PHÁP
+                            </div>
+                        </div>
+                        <div style="padding: 25px;">
+                            <h4 style="color: #333; margin-bottom: 15px; font-size: 20px; font-weight: 600; line-height: 1.4;">Liệu pháp massage thư giãn và những lợi ích tuyệt vời</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Massage không chỉ giúp thư giãn cơ thể mà còn mang lại nhiều lợi ích sức khỏe tuyệt vời. Tìm hiểu về các loại massage phổ biến và cách chúng cải thiện sức khỏe tổng thể...</p>
+                            <a href="#" class="btn btn-spa btn-sm">Đọc thêm</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="blog-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="position: relative; overflow: hidden;">
+                            <img src="/img/banner3.jpg" alt="Spa Treatment" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="position: absolute; top: 15px; left: 15px; background: linear-gradient(45deg, #2196F3, #21CBF3); color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
+                                ĐIỀU TRỊ
+                            </div>
+                        </div>
+                        <div style="padding: 25px;">
+                            <h4 style="color: #333; margin-bottom: 15px; font-size: 20px; font-weight: 600; line-height: 1.4;">Phương pháp điều trị da hiện đại tại spa cao cấp</h4>
+                            <p style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">Khám phá các phương pháp điều trị da tiên tiến nhất hiện nay. Từ công nghệ laser đến liệu pháp tế bào gốc, spa cao cấp mang đến những giải pháp toàn diện cho mọi vấn đề da...</p>
                             <a href="#" class="btn btn-spa btn-sm">Đọc thêm</a>
                         </div>
                     </div>
@@ -886,66 +556,116 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="footer-section">
+    <footer id="contact" style="background: #ffffff; color: #333; padding: 50px 0 20px 0; border-top: 1px solid #eee;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="luxury-brand" style="color: #4CAF50; font-size: 32px; margin-bottom: 20px;">
-                        Luxury<br><small>Spa</small>
+            <!-- Payment Methods -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center; margin-bottom: 30px;">
+                        <img src="https://via.placeholder.com/60x35/4CAF50/FFFFFF?text=VISA" alt="Visa" style="height: 35px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <img src="https://via.placeholder.com/60x35/FF9800/FFFFFF?text=MC" alt="Mastercard" style="height: 35px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <img src="https://via.placeholder.com/60x35/2196F3/FFFFFF?text=BIDV" alt="BIDV" style="height: 35px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <img src="https://via.placeholder.com/80x35/E91E63/FFFFFF?text=VietinBank" alt="VietinBank" style="height: 35px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <img src="https://via.placeholder.com/80x35/9C27B0/FFFFFF?text=TPBank" alt="TPBank" style="height: 35px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <img src="https://via.placeholder.com/60x35/FF5722/FFFFFF?text=VCB" alt="Vietcombank" style="height: 35px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                     </div>
-                    <p style="color: #ccc; margin-bottom: 30px;">
-                        Chăm sóc sức khỏe và sắc đẹp với phong cách đẳng cấp quốc tế.
-                    </p>
-                    <div>
-                        <a href="#" style="color: #4CAF50; font-size: 24px; margin-right: 15px;"><i class="fa fa-facebook"></i></a>
-                        <a href="#" style="color: #4CAF50; font-size: 24px; margin-right: 15px;"><i class="fa fa-instagram"></i></a>
-                        <a href="#" style="color: #4CAF50; font-size: 24px; margin-right: 15px;"><i class="fa fa-youtube"></i></a>
-                        <a href="#" style="color: #4CAF50; font-size: 24px;"><i class="fa fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h4 style="color: #4CAF50; margin-bottom: 20px;">Thông tin liên hệ</h4>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="color: white;">Địa chỉ:</strong><br>
-                        <span style="color: #ccc;">A1-23 Đường Hoa Hồng khu đô thị Hoàng Quân</span>
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="color: white;">Hotline:</strong><br>
-                        <span style="color: #ccc;">0123-456-789</span>
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="color: white;">Email:</strong><br>
-                        <span style="color: #ccc;">LuxurySpa@yahoo.com</span>
-                    </div>
-                    <div style="margin-bottom: 15px;">
-                        <strong style="color: white;">Số Điện Thoại:</strong><br>
-                        <span style="color: #ccc;">0123-456-789</span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h4 style="color: #4CAF50; margin-bottom: 20px;">Giờ mở cửa</h4>
-                    <div style="color: #ccc;">
-                        <p>Thứ 2 - Thứ 6: 8:00 AM - 10:00 PM</p>
-                        <p>Thứ 7 - Chủ nhật: 9:00 AM - 11:00 PM</p>
-                    </div>
-                    
-                    <h4 style="color: #4CAF50; margin-bottom: 20px; margin-top: 30px;">Đăng ký nhận tin</h4>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Email của bạn...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-spa" type="button">Đăng ký</button>
-                        </span>
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <p style="color: #4CAF50; font-weight: 600; margin: 0; font-size: 16px;">Hãy cập nhật với chúng tôi</p>
+                        <div style="display: flex; gap: 15px; justify-content: center; margin-top: 15px;">
+                            <a href="#" style="background: #1877f2; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa fa-facebook" style="font-size: 20px;"></i>
+                            </a>
+                            <a href="#" style="background: #ff0000; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa fa-youtube" style="font-size: 20px;"></i>
+                            </a>
+                            <a href="#" style="background: #e4405f; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa fa-instagram" style="font-size: 20px;"></i>
+                            </a>
+                            <a href="#" style="background: #333; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa fa-music" style="font-size: 20px;"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr style="border-color: #555; margin: 40px 0;">
+
+            <!-- Footer Links -->
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <p style="color: #999; margin: 0;">
-                        © 2024 Luxury Spa. Tất cả quyền được bảo lưu. | 
-                        <a href="#" style="color: #4CAF50;">Chính sách bảo mật</a> | 
-                        <a href="#" style="color: #4CAF50;">Điều khoản sử dụng</a>
-                    </p>
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 style="color: #4CAF50; font-weight: 600; margin-bottom: 20px; font-size: 16px;">Về Tan Du Spa</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Giới thiệu</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Câu chuyện thương hiệu</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Tin tức spa</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Hỗ trợ khách hàng</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 style="color: #4CAF50; font-weight: 600; margin-bottom: 20px; font-size: 16px;">Dịch vụ</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Combo spa</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Chăm sóc da mặt</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Massage body</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Điều trị da chuyên sâu</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 style="color: #4CAF50; font-weight: 600; margin-bottom: 20px; font-size: 16px;">Pháp lý</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Điều khoản sử dụng</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Chính sách bảo mật</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Chính sách đổi trả</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Chính sách thanh toán</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 style="color: #4CAF50; font-weight: 600; margin-bottom: 20px; font-size: 16px;">Đối tác</h5>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Đối tác kinh doanh</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Hệ thống franchise</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#" style="color: #666; text-decoration: none; font-size: 14px; transition: color 0.3s ease;" onmouseover="this.style.color='#4CAF50'" onmouseout="this.style.color='#666'">Chương trình affiliate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 style="color: #4CAF50; font-weight: 600; margin-bottom: 20px; font-size: 16px;">Thông tin liên hệ</h5>
+                    <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa fa-map-marker" style="color: #4CAF50; width: 16px;"></i>
+                        <span style="color: #666; font-size: 14px;">A1-23 Đường Hoa Hồng khu đô thị Hoàng Quân</span>
+                    </div>
+                    <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa fa-phone" style="color: #4CAF50; width: 16px;"></i>
+                        <span style="color: #666; font-size: 14px;">Hotline: <strong style="color: #4CAF50;">0123-456-789</strong></span>
+                    </div>
+                    <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa fa-envelope" style="color: #4CAF50; width: 16px;"></i>
+                        <span style="color: #666; font-size: 14px;">Email: LuxurySpa@yahoo.com</span>
+                    </div>
+                    <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa fa-clock-o" style="color: #4CAF50; width: 16px;"></i>
+                        <span style="color: #666; font-size: 14px;">T2-T6: 8:00-22:00 | T7-CN: 9:00-23:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 30px;">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p style="color: #666; margin: 0; font-size: 14px;">
+                            © 2024 <strong style="color: #4CAF50;">Tan Du Luxury Spa</strong>. Tất cả quyền được bảo lưu.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p style="color: #999; margin: 0; font-size: 12px;">
+                            Thiết kế bởi <span style="color: #4CAF50;">Tan Du Team</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -955,98 +675,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script>
-    // Cart functionality
-    let cart = [];
-    let cartCount = 0;
-
-    function updateCartBadge() {
-        document.getElementById('cart-badge').textContent = cartCount;
-    }
-
-    function addToCart(item) {
-        cart.push(item);
-        cartCount++;
-        updateCartBadge();
-        
-        // Show notification
-        alert('Đã thêm vào giỏ hàng: ' + item.name);
-    }
-
-    // Cart button click handler
-    document.getElementById('cart-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        showCartModal();
-    });
-
-    function showCartModal() {
-        let cartContent = '<h4>Giỏ hàng của bạn</h4>';
-        
-        if (cart.length === 0) {
-            cartContent += '<p>Giỏ hàng trống</p>';
-        } else {
-            cartContent += '<ul>';
-            cart.forEach(function(item, index) {
-                cartContent += '<li>' + item.name + ' - ' + item.price + '</li>';
-            });
-            cartContent += '</ul>';
-        }
-        
-        // Simple modal implementation
-        if (confirm(cartContent + '\n\nBạn có muốn xem chi tiết giỏ hàng không?')) {
-            // Redirect to cart page or show detailed modal
-            console.log('Show detailed cart');
-        }
-    }
-
-    // Initialize
-    updateCartBadge();
-    </script>
-
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
-    <!-- Additional Cart functionality -->
-    <script>
-    // Cart dropdown functionality
-    document.getElementById('cart-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        const dropdown = this.nextElementSibling;
-        dropdown.classList.toggle('show');
-    });
-    
-    // Close cart dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        const cartDropdown = document.querySelector('.cart-dropdown');
-        const cartBtn = document.getElementById('cart-btn');
-        if (!cartBtn.contains(e.target) && !cartDropdown.contains(e.target)) {
-            cartDropdown.classList.remove('show');
-        }
-    });
-    
-    // Initialize Swiper
-    const heroSwiper = new Swiper('#heroSlider', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        effect: 'slide',
-        speed: 1000,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    </script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
