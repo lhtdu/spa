@@ -163,4 +163,84 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Auto-slide for blog (optional) - disabled for manual control
     // setInterval(nextBlogSlide, 8000); // Auto slide every 8 seconds
+    
+    // Initialize service description functionality
+    initializeServices();
+    
+    // Initialize tab switching
+    initializeTabSwitching();
 });
+
+// ===== EXTRACTED FROM HTML =====
+
+// Service Description Functionality
+const serviceDescriptions = {
+    'trongoi': 'Trải nghiệm dịch vụ trọn gói tại Suối Spa với không gian yên bình, thỏa mãn mọi nhu cầu chăm sóc sắc đẹp và sức khỏe của bạn. Từ massage thư giãn đến các liệu trình chăm sóc chuyên sâu.',
+    'massage': 'Dịch vụ massage thư giãn chuyên nghiệp giúp giải tỏa căng thẳng, thư giãn cơ bắp và tái tạo năng lượng. Với đội ngũ kỹ thuật viên giàu kinh nghiệm và phương pháp massage truyền thống.',
+    'skincare': 'Chăm sóc da chuyên sâu với các liệu trình hiện đại, sử dụng sản phẩm thiên nhiên cao cấp. Giúp da trắng sáng, mịn màng và khỏe mạnh từ bên trong.',
+    'bodycare': 'Dịch vụ chăm sóc cơ thể toàn diện với các liệu trình tẩy tế bào chết, dưỡng ẩm và săn chắc da. Mang lại làn da mềm mại và vóc dáng hoàn hảo.',
+    'haircare': 'Chăm sóc tóc chuyên nghiệp với các liệu trình phục hồi, dưỡng ẩm và tạo kiểu. Giúp mái tóc khỏe mạnh, óng mượt và đẹp tự nhiên.',
+    'waxing': 'Dịch vụ waxing an toàn và hiệu quả với công nghệ hiện đại. Loại bỏ lông không mong muốn một cách nhẹ nhàng, cho làn da mịn màng lâu dài.'
+};
+
+function changeServiceDescription(serviceType) {
+    const descriptionElement = document.getElementById('serviceDescription');
+    if (descriptionElement && serviceDescriptions[serviceType]) {
+        descriptionElement.textContent = serviceDescriptions[serviceType];
+        
+        // Reset all services to default color
+        const allServices = document.querySelectorAll('.service-item h5');
+        allServices.forEach(service => {
+            service.style.color = '#666';
+        });
+        
+        // Change color of selected service text to brown
+        const currentServiceTitle = event.currentTarget.querySelector('h5');
+        if (currentServiceTitle) {
+            currentServiceTitle.style.color = '#7C5E3B';
+        }
+    }
+}
+
+function initializeServices() {
+    // Set default description on page load
+    const descriptionElement = document.getElementById('serviceDescription');
+    if (descriptionElement) {
+        descriptionElement.textContent = serviceDescriptions['trongoi'];
+        // Set first service as active by default
+        const firstService = document.querySelector('.service-item h5');
+        if (firstService) {
+            firstService.style.color = '#7C5E3B';
+        }
+    }
+}
+
+// Tab Switching Functionality
+function initializeTabSwitching() {
+    const tabButtons = document.querySelectorAll('.service-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Update tab colors
+            tabButtons.forEach(btn => {
+                if (btn === this) {
+                    btn.style.color = '#7C5E3B';
+                } else {
+                    btn.style.color = '#666';
+                }
+            });
+            
+            // Show/hide tab content
+            tabContents.forEach(content => {
+                if (content.id === targetTab + '-services') {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+    });
+}
