@@ -179,7 +179,7 @@ include 'header.php';
                                     </label>
                                     <input type="tel" class="form-control" id="phone" name="phone" 
                                            value="<?php echo isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''; ?>" 
-                                           required placeholder="0987654321"
+                                            placeholder=""
                                            style="border-radius: 10px; border: 2px solid #e0e0e0; padding: 12px 15px;"
                                            onfocus="this.style.borderColor='#7C5E3B'" 
                                            onblur="this.style.borderColor='#e0e0e0'">
