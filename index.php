@@ -1,4 +1,7 @@
-<?php include 'header.php'; ?>
+<?php 
+session_start();
+include 'header.php'; 
+?>
 
 <body>
     <?php include 'nav.php'; ?>
@@ -240,7 +243,7 @@
                 <div class="row">
                     <!-- Massage Services Column -->
                     <div class="col-md-6 mb-4">
-                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px; border-bottom: 2px solid #7C5E3B; padding-bottom: 10px;">
+                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px;">
                             MASSAGE & THƯ GIÃN
                         </h4>
                         
@@ -271,7 +274,7 @@
 
                     <!-- Facial & Body Services Column -->
                     <div class="col-md-6 mb-4">
-                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px; border-bottom: 2px solid #7C5E3B; padding-bottom: 10px;">
+                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px;">
                             CHĂM SÓC DA & CƠ THỂ
                         </h4>
                         
@@ -300,6 +303,13 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Book Appointment Button for Single Services -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <button style="padding: 15px 40px; background: #7C5E3B; color: white; border: none; font-weight: 600; text-transform: uppercase; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#6B4F32'" onmouseout="this.style.backgroundColor='#7C5E3B'">
+                        ĐẶT LỊCH HẸN NGAY
+                    </button>
+                </div>
             </div>
 
             <!-- Combo Services Tab Content -->
@@ -307,7 +317,7 @@
                 <div class="row">
                     <!-- Premium Combos Column -->
                     <div class="col-md-6 mb-4">
-                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px; border-bottom: 2px solid #7C5E3B; padding-bottom: 10px;">
+                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px;">
                             COMBO CAO CẤP
                         </h4>
                         
@@ -332,11 +342,22 @@
                                 <div style="color: #7C5E3B; font-weight: 700; font-size: 16px;">799,000đ</div>
                             </div>
                         </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #eee;">
+                            <div style="flex: 1;">
+                                <h5 style="color: #333; font-weight: 600; margin-bottom: 5px; font-size: 16px;">Combo Premium Detox</h5>
+                                <p style="color: #666; font-size: 13px; margin: 0;">Massage thảo dược + Điều trị mụn chuyên sâu + Tắm khoáng + Xông hơi (210 phút)</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="color: #999; font-size: 13px; text-decoration: line-through;">1,200,000đ</div>
+                                <div style="color: #7C5E3B; font-weight: 700; font-size: 16px;">999,000đ</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Couple Combos Column -->
                     <div class="col-md-6 mb-4">
-                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px; border-bottom: 2px solid #7C5E3B; padding-bottom: 10px;">
+                        <h4 style="color: #7C5E3B; font-weight: 600; margin-bottom: 20px; font-size: 18px;">
                             COMBO ĐÔI
                         </h4>
                         
@@ -361,15 +382,26 @@
                                 <div style="color: #7C5E3B; font-weight: 700; font-size: 16px;">1,599,000đ</div>
                             </div>
                         </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #eee;">
+                            <div style="flex: 1;">
+                                <h5 style="color: #333; font-weight: 600; margin-bottom: 5px; font-size: 16px;">Combo Honeymoon Bliss</h5>
+                                <p style="color: #666; font-size: 13px; margin: 0;">Massage đá nóng đôi + Chăm sóc da + Tắm hoa hồng (180 phút)</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="color: #999; font-size: 13px; text-decoration: line-through;">1,600,000đ</div>
+                                <div style="color: #7C5E3B; font-weight: 700; font-size: 16px;">1,299,000đ</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Book Appointment Button -->
-            <div style="text-align: center; margin-top: 30px;">
-                <button style="padding: 15px 40px; background: #7C5E3B; color: white; border: none; font-weight: 600; text-transform: uppercase; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#6B4F32'" onmouseout="this.style.backgroundColor='#7C5E3B'">
-                    ĐẶT LỊCH HẸN NGAY
-                </button>
+                
+                <!-- Book Appointment Button for Combo Services -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <button style="padding: 15px 40px; background: #7C5E3B; color: white; border: none; font-weight: 600; text-transform: uppercase; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#6B4F32'" onmouseout="this.style.backgroundColor='#7C5E3B'">
+                        ĐẶT LỊCH HẸN NGAY
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -434,5 +466,124 @@
             }
         });
     </script>
+
+    <!-- Welcome Message Script -->
+    <?php if (isset($_SESSION['welcome_message'])): ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create beautiful welcome toast
+        const welcomeToast = document.createElement('div');
+        welcomeToast.className = 'welcome-toast';
+        welcomeToast.innerHTML = `
+            <div class="welcome-content">
+                <div class="welcome-icon">
+                    <i class="fa fa-gift" style="color: #FFD700; font-size: 2rem;"></i>
+                </div>
+                <div class="welcome-text">
+                    <h5 style="margin: 0; color: #7C5E3B; font-weight: 600;">Chào mừng bạn!</h5>
+                    <p style="margin: 5px 0 0 0; color: #666;">Bạn nhận được 100 điểm thưởng chào mừng</p>
+                </div>
+                <button class="welcome-close" onclick="closeWelcomeToast()" style="background: none; border: none; color: #999; font-size: 1.2rem; cursor: pointer;">×</button>
+            </div>
+            <div class="welcome-progress"></div>
+        `;
+        
+        // Add CSS styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .welcome-toast {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(124, 94, 59, 0.3);
+                padding: 20px;
+                min-width: 350px;
+                z-index: 9999;
+                transform: translateX(400px);
+                transition: transform 0.5s ease;
+                border-left: 5px solid #7C5E3B;
+            }
+            
+            .welcome-toast.show {
+                transform: translateX(0);
+            }
+            
+            .welcome-content {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .welcome-icon {
+                flex-shrink: 0;
+            }
+            
+            .welcome-text {
+                flex-grow: 1;
+            }
+            
+            .welcome-close {
+                flex-shrink: 0;
+            }
+            
+            .welcome-close:hover {
+                color: #7C5E3B !important;
+            }
+            
+            .welcome-progress {
+                height: 3px;
+                background: linear-gradient(135deg, #7C5E3B 0%, #C8A882 100%);
+                border-radius: 0 0 10px 10px;
+                margin: 15px -20px -20px -20px;
+                animation: progressBar 5s linear forwards;
+            }
+            
+            @keyframes progressBar {
+                from { width: 100%; }
+                to { width: 0%; }
+            }
+            
+            @media (max-width: 768px) {
+                .welcome-toast {
+                    right: 10px;
+                    left: 10px;
+                    min-width: unset;
+                    transform: translateY(-100px);
+                }
+                .welcome-toast.show {
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add to page and show
+        document.body.appendChild(welcomeToast);
+        
+        setTimeout(() => {
+            welcomeToast.classList.add('show');
+        }, 100);
+        
+        // Auto hide after 5 seconds
+        setTimeout(() => {
+            closeWelcomeToast();
+        }, 5000);
+    });
+
+    function closeWelcomeToast() {
+        const toast = document.querySelector('.welcome-toast');
+        if (toast) {
+            toast.style.transform = window.innerWidth <= 768 ? 'translateY(-100px)' : 'translateX(400px)';
+            setTimeout(() => {
+                toast.remove();
+            }, 500);
+        }
+    }
+    </script>
+    <?php unset($_SESSION['welcome_message']); ?>
+    <?php endif; ?>
 </body>
 </html>
